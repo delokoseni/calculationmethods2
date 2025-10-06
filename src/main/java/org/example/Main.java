@@ -34,7 +34,33 @@ public class Main {
         float[][] matrixL = new float[matrixLU.length][matrixLU.length];
         float[][] matrixU = new float[matrixLU.length][matrixLU.length];
         LU.findLU(matrixLU, matrixL, matrixU);
-
+        System.out.println("\nПолученная матрица L:");
+        for (float[] floats : matrixL) {
+            for (float aFloat : floats) {
+                System.out.printf("%.2f\t", aFloat);
+            }
+            System.out.println();
+        }
+        System.out.println("\nПолученная матрица U:");
+        for (float[] floats : matrixU) {
+            for (float aFloat : floats) {
+                System.out.printf("%.2f\t", aFloat);
+            }
+            System.out.println();
+        }
+        System.out.println("\nПроверка перемножением матриц L и U:");
+        for (float[] floats : LU.multiplyMatrices(matrixL, matrixU)) {
+            for (float aFloat : floats) {
+                System.out.printf("%.2f\t", aFloat);
+            }
+            System.out.println();
+        }
+        System.out.println("\nОпределитель матрицы A:\n" + LU.calcolateDet(matrixL, matrixU));
+        System.out.println("\nРешение системы Ax=b:");
+        float[] solution = LU.solveSystem(matrixL, matrixU, columnLU);
+        for (int i = 0; i < solution.length; i++) {
+            System.out.printf("x[%d] = %.4f\n", i + 1, solution[i]);
+        }
         System.out.println("\nВходные данные для метода прогонки:\nМатрица A:");
         for (float[] floats : matrixRunThrough) {
             for (float aFloat : floats) {
