@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.classes.DataInput;
+import org.example.classes.LU;
 
 import java.io.IOException;
 
@@ -30,6 +31,9 @@ public class Main {
         for (float aFloat : columnLU) {
             System.out.printf("%.2f\n", aFloat);
         }
+        float[][] matrixL = new float[matrixLU.length][matrixLU.length];
+        float[][] matrixU = new float[matrixLU.length][matrixLU.length];
+        LU.findLU(matrixLU, matrixL, matrixU);
 
         System.out.println("\nВходные данные для метода прогонки:\nМатрица A:");
         for (float[] floats : matrixRunThrough) {
