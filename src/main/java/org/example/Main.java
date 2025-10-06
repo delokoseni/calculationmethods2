@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.classes.DataInput;
 import org.example.classes.LU;
+import org.example.classes.TridiagonalSolver;
 
 import java.io.IOException;
 
@@ -72,6 +73,10 @@ public class Main {
         for (float aFloat : columnRunThrough) {
             System.out.printf("%.2f\n", aFloat);
         }
-
+        System.out.println("\nРешение методом прогонки:");
+        float[] solutionRunThrough = TridiagonalSolver.solve(matrixRunThrough, columnRunThrough);
+        for (int i = 0; i < solutionRunThrough.length; i++) {
+            System.out.printf("x[%d] = %.4f\n", i + 1, solutionRunThrough[i]);
+        }
     }
 }
