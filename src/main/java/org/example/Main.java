@@ -55,7 +55,7 @@ public class Main {
             }
             System.out.println();
         }
-        System.out.println("\nОпределитель матрицы A:\n" + LU.calcolateDet(matrixL, matrixU));
+        System.out.println("\nОпределитель матрицы A:\n" + LU.calculateDet(matrixL, matrixU));
         System.out.println("\nРешение системы Ax=b:");
         float[] solution = LU.solveSystem(matrixL, matrixU, columnLU);
         for (int i = 0; i < solution.length; i++) {

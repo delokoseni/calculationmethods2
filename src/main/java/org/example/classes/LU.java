@@ -46,7 +46,7 @@ public class LU {
         return result;
     }
 
-    public static float calcolateDet(float [][] matrixL, float [][] matrixU) {
+    public static float calculateDet(float [][] matrixL, float [][] matrixU) {
         float detL = 1;
         float detU = 1;
         if (matrixL.length != matrixL[0].length ||
